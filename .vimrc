@@ -46,6 +46,7 @@ set number
 syntax on
 " Highlight current line
 set cursorline
+highlight CursorLine ctermbg=White
 " Make tabs as wide as two spaces
 set tabstop=2
 " Show “invisible” characters
