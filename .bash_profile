@@ -48,3 +48,22 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+# Enable ondir (https://github.com/alecthomas/ondir)
+cd()
+{
+	builtin cd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+}
+
+pushd()
+{
+	builtin pushd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+}
+
+popd()
+{
+	builtin popd "$@" && eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+}
+
+# Run ondir on login
+eval "`ondir /`"

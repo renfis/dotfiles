@@ -1,0 +1,13 @@
+# Set private git settings.
+# Set and export variables in file ~/.extra
+enter ~/workspace/renfis/([^/]+)
+  if [ -d .git ]; then
+    git config user.name "$GIT_AUTHOR_NAME_PRIVATE"
+    git config user.email "$GIT_AUTHOR_EMAIL_PRIVATE"
+    echo "Changed git profile to private settings."
+  else
+   echo "Not a git directory. Did nothing."
+  fi
+
+leave ~/workspace/renfis/([^/]+)
+  echo "Changed git profile to work settings."
