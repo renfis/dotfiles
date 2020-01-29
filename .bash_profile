@@ -67,3 +67,7 @@ popd()
 
 # Run ondir on login
 eval "`ondir /`"
+
+# Enable jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
